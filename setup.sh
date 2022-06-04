@@ -46,23 +46,7 @@ sleep 2
 clear
 
 # Script Access 
-MYIP=$(wget -qO- icanhazip.com);
 
-echo -e "${green}CHECKING SCRIPT ACCESS${NC}"
-sleep 2
-IZIN=$( curl -sS https://raw.githubusercontent.com/juangustavvo/lohe/main/ipvps | awk '{print $4}' | grep $MYIP )
-if [ $MYIP = $IZIN ]; then
-    echo -e ""
-    echo -e "${green}ACCESS GRANTED...${NC}"
-    sleep 2
-else
-	echo -e ""
-    echo -e "${green}ACCESS DENIED...PM TELEGRAM OWNER${NC}"
-    sleep 2
-    rm -f setup.sh
-    exit 1
-fi
-clear
 
 # Subdomain Settings
 echo -e "============================================="
